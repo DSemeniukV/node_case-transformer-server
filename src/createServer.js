@@ -57,7 +57,7 @@ function createServer() {
           {
             originalCase: result.originalCase,
             targetCase: toCase,
-            originalText: text,
+            originalText: rawText,
             convertedText: result.convertedText,
           },
           null,
