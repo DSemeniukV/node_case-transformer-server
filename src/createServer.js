@@ -9,7 +9,9 @@ function createServer() {
 
     try {
       const [path, queryString] = req.url.split('?');
+
       const rawText = path.slice(1);
+
       const text = decodeURIComponent(rawText).trim();
 
       const params = new URLSearchParams(queryString || '');
@@ -47,7 +49,7 @@ function createServer() {
         return;
       }
 
-      const result = convertToCase(text, toCase);
+      const result = convertToCase(toCase, text);
 
       res.statusCode = 200;
       res.statusMessage = 'OK';
